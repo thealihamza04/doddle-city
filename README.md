@@ -1,24 +1,11 @@
 # Doddle City
 
-Make me a 3d website like this which contains infinite canvas and the characters are moving here and there like a drone shot in times square and people are moving and going on their job.
+A 3d website like this which contains infinite canvas and the characters are moving here and there like a drone shot in times square and people are moving and going on their job.
 
-This project was built with [Lovable](https://lovable.dev).
 
-## Build with Lovable
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/4a00d949-d3c5-4b45-b198-d326b42822b2).
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+# Showcase 
 
-## Development
+https://github.com/user-attachments/assets/b804d085-9d77-40c7-9d1d-8b027256db9e
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
-```
