@@ -260,7 +260,8 @@ function Drone() {
 
 export function DoodleCity() {
   return (
-    <div className="fixed inset-0 bg-background">
+    <main className="fixed inset-0 bg-background">
+      <div role="img" aria-label="Interactive 3D doodle city: hand-drawn characters walk endless streets. Drag to pan the camera, scroll to zoom." className="absolute inset-0">
       <Canvas shadows dpr={[1, 2]} camera={{ position: [18, 26, 26], fov: 45 }}>
         <color attach="background" args={[PAPER]} />
         <fog attach="fog" args={[PAPER, 40, 85]} />
@@ -270,12 +271,13 @@ export function DoodleCity() {
         <Ground />
         <Crowd />
       </Canvas>
+      </div>
       <div className="pointer-events-none fixed inset-x-0 top-0 flex items-start justify-between p-6">
-        <h1 className="font-doodle text-4xl text-foreground md:text-5xl">Doodle City</h1>
+        <h1 className="font-doodle text-4xl text-foreground md:text-5xl">Explore an endless 3D doodle city</h1>
         <p className="font-doodle rounded-full border-2 border-foreground bg-background px-4 py-1 text-sm text-foreground">
           drag to fly · scroll to zoom
         </p>
       </div>
-    </div>
+    </main>
   );
 }
