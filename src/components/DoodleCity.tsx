@@ -91,7 +91,8 @@ function Character({ kind, color }: { kind: Kind; color: string }) {
 }
 
 type Walker = { x: number; z: number; dir: number; speed: number; pause: number; phase: number; kind: Kind; color: string };
-const DIRS = [[1, 0], [0, 1], [-1, 0], [0, -1]];
+const DIRS: [number, number][] = [[1, 0], [0, 1], [-1, 0], [0, -1]];
+const pick = <T,>(a: T[]) => a[Math.floor(Math.random() * a.length)] as T;
 
 function makeWalkers(): Walker[] {
   return Array.from({ length: COUNT }, () => {
@@ -106,8 +107,8 @@ function makeWalkers(): Walker[] {
       speed: SPEED_MIN + Math.random() * (SPEED_MAX - SPEED_MIN),
       pause: 0,
       phase: Math.random() * 10,
-      kind: KINDS[Math.floor(Math.random() * KINDS.length)],
-      color: Math.random() < 0.14 ? ACCENTS[Math.floor(Math.random() * ACCENTS.length)] : PAPER,
+      kind: pick(KINDS),
+      color: Math.random() < 0.14 ? pick(ACCENTS) : PAPER,
     };
   });
 }
@@ -124,7 +125,7 @@ function Crowd() {
     walkers.forEach((w, i) => {
       if (w.pause > 0) w.pause -= dt;
       else {
-        const [dx, dz] = DIRS[w.dir];
+        const [dx, dz] = DIRS[w.dir]!;
         const px = w.x, pz = w.z;
         w.x += dx * w.speed * dt;
         w.z += dz * w.speed * dt;
@@ -151,7 +152,7 @@ function Crowd() {
       const walking = w.pause <= 0;
       const k = t * w.speed * 5 + w.phase;
       g.position.set(w.x, walking ? Math.abs(Math.sin(k)) * 0.25 : 0, w.z);
-      const [dx, dz] = DIRS[w.dir];
+      const [dx, dz] = DIRS[w.dir]!;
       const target = Math.atan2(dx, dz);
       let diff = target - g.rotation.y;
       diff = Math.atan2(Math.sin(diff), Math.cos(diff));
