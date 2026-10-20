@@ -1,4 +1,4 @@
-import { Canvas, useFrame, useThree } from "@react-three/fiber";
+import { Canvas, useFrame, useThree, type ThreeElements } from "@react-three/fiber";
 import { MapControls } from "@react-three/drei";
 import { useMemo, useRef } from "react";
 import * as THREE from "three";
@@ -42,7 +42,7 @@ const outline = new THREE.MeshBasicMaterial({ color: INK, side: THREE.BackSide }
 const ink = new THREE.MeshBasicMaterial({ color: INK });
 const white = new THREE.MeshBasicMaterial({ color: "#ffffff" });
 
-function Inked({ g, color, s = 1, ...p }: { g: THREE.BufferGeometry; color: string; s?: number } & JSX.IntrinsicElements["group"]) {
+function Inked({ g, color, s = 1, ...p }: { g: THREE.BufferGeometry; color: string; s?: number } & ThreeElements["group"]) {
   return (
     <group {...p}>
       <mesh geometry={g} material={toon(color)} castShadow />
