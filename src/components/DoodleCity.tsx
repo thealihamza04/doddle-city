@@ -27,7 +27,7 @@ const geo = {
   dot: new THREE.SphereGeometry(0.14, 8, 6),
 };
 const gradient = (() => {
-  const d = new Uint8Array([90, 200, 255]);
+  const d = new Uint8Array([150, 225, 255]);
   const t = new THREE.DataTexture(d, 3, 1, THREE.RedFormat);
   t.minFilter = t.magFilter = THREE.NearestFilter;
   t.needsUpdate = true;
@@ -225,7 +225,7 @@ function Ground() {
   return (
     <mesh ref={ref} rotation-x={-Math.PI / 2} receiveShadow>
       <planeGeometry args={[400, 400]} />
-      <meshToonMaterial map={tex} gradientMap={gradient} />
+      <meshBasicMaterial map={tex} />
     </mesh>
   );
 }
