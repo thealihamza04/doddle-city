@@ -2,6 +2,7 @@ import { Canvas, useFrame, useThree, type ThreeElements } from "@react-three/fib
 import { MapControls } from "@react-three/drei";
 import { useMemo, useRef } from "react";
 import * as THREE from "three";
+import { CityProps } from "./CityProps";
 
 const PAPER = "#fbf7ec";
 const INK = "#1a1a1a";
@@ -270,6 +271,7 @@ export function DoodleCity() {
         <Drone />
         <Ground />
         <Crowd />
+        <CityProps />
       </Canvas>
       </div>
       <div className="pointer-events-none fixed inset-x-0 top-0 flex items-start justify-between p-6">
